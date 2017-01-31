@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `UnixListener` struct in crate `tokio_uds`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, UnixListener">
+
+    <title>tokio_uds::UnixListener - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='index.html'>tokio_uds</a></p><script>window.sidebarCurrent = {name: 'UnixListener', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='index.html'>tokio_uds</a>::<wbr><a class='struct' href=''>UnixListener</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../src/tokio_uds/lib.rs.html#39-41' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct UnixListener { /* fields omitted */ }</pre><div class='docblock'><p>A Unix socket which can accept connections from other unix sockets.</p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../tokio_uds/struct.UnixListener.html' title='tokio_uds::UnixListener'>UnixListener</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/tokio_uds/lib.rs.html#43-132' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.bind' class='method'><span id='bind.v' class='invisible'><code>fn <a href='#method.bind' class='fnname'>bind</a>&lt;P&gt;(path: P, handle: &amp;<a class='struct' href='https://docs.rs/tokio-core/0.1/tokio_core/reactor/struct.Handle.html' title='tokio_core::reactor::Handle'>Handle</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/std/io/error/type.Result.html' title='std::io::error::Result'>Result</a>&lt;<a class='struct' href='../tokio_uds/struct.UnixListener.html' title='tokio_uds::UnixListener'>UnixListener</a>&gt; <span class='where fmt-newline'>where P: <a class='trait' href='https://doc.rust-lang.org/nightly/core/convert/trait.AsRef.html' title='core::convert::AsRef'>AsRef</a>&lt;<a class='struct' href='https://doc.rust-lang.org/nightly/std/path/struct.Path.html' title='std::path::Path'>Path</a>&gt;</span></code></span></h4>
+<div class='docblock'><p>Creates a new <code>UnixListener</code> bound to the specified path.</p>
+</div><h4 id='method.from_listener' class='method'><span id='from_listener.v' class='invisible'><code>fn <a href='#method.from_listener' class='fnname'>from_listener</a>(listener: <a class='struct' href='https://doc.rust-lang.org/nightly/std/sys/imp/ext/net/struct.UnixListener.html' title='std::sys::imp::ext::net::UnixListener'>UnixListener</a>,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; handle: &amp;<a class='struct' href='https://docs.rs/tokio-core/0.1/tokio_core/reactor/struct.Handle.html' title='tokio_core::reactor::Handle'>Handle</a>)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/std/io/error/type.Result.html' title='std::io::error::Result'>Result</a>&lt;<a class='struct' href='../tokio_uds/struct.UnixListener.html' title='tokio_uds::UnixListener'>UnixListener</a>&gt;</code></span></h4>
+<div class='docblock'><p>Consumes a <code>UnixListener</code> in the standard library and returns a
+nonblocking <code>UnixListener</code> from this crate.</p>
+
+<p>The returned listener will be associated with the given event loop
+specified by <code>handle</code> and is ready to perform I/O.</p>
+</div><h4 id='method.local_addr' class='method'><span id='local_addr.v' class='invisible'><code>fn <a href='#method.local_addr' class='fnname'>local_addr</a>(&amp;self) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/std/io/error/type.Result.html' title='std::io::error::Result'>Result</a>&lt;<a class='struct' href='https://doc.rust-lang.org/nightly/std/sys/imp/ext/net/struct.SocketAddr.html' title='std::sys::imp::ext::net::SocketAddr'>SocketAddr</a>&gt;</code></span></h4>
+<div class='docblock'><p>Returns the local socket address of this listener.</p>
+</div><h4 id='method.poll_read' class='method'><span id='poll_read.v' class='invisible'><code>fn <a href='#method.poll_read' class='fnname'>poll_read</a>(&amp;self) -&gt; <a class='enum' href='https://docs.rs/futures/0.1/futures/poll/enum.Async.html' title='futures::poll::Async'>Async</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>&gt;</code></span></h4>
+<div class='docblock'><p>Test whether this socket is ready to be read or not.</p>
+</div><h4 id='method.take_error' class='method'><span id='take_error.v' class='invisible'><code>fn <a href='#method.take_error' class='fnname'>take_error</a>(&amp;self) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/std/io/error/type.Result.html' title='std::io::error::Result'>Result</a>&lt;<a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='struct' href='https://doc.rust-lang.org/nightly/std/io/error/struct.Error.html' title='std::io::error::Error'>Error</a>&gt;&gt;</code></span></h4>
+<div class='docblock'><p>Returns the value of the <code>SO_ERROR</code> option.</p>
+</div><h4 id='method.incoming' class='method'><span id='incoming.v' class='invisible'><code>fn <a href='#method.incoming' class='fnname'>incoming</a>(self) -&gt; <a class='type' href='https://docs.rs/tokio-core/0.1/tokio_core/io/type.IoStream.html' title='tokio_core::io::IoStream'>IoStream</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>(</a><a class='struct' href='../tokio_uds/struct.UnixStream.html' title='tokio_uds::UnixStream'>UnixStream</a>, <a class='struct' href='https://doc.rust-lang.org/nightly/std/sys/imp/ext/net/struct.SocketAddr.html' title='std::sys::imp::ext::net::SocketAddr'>SocketAddr</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>)</a>&gt;</code></span></h4>
+<div class='docblock'><p>Consumes this listener, returning a stream of the sockets this listener
+accepts.</p>
+
+<p>This method returns an implementation of the <code>Stream</code> trait which
+resolves to the sockets the are accepted on this listener.</p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a> for <a class='struct' href='../tokio_uds/struct.UnixListener.html' title='tokio_uds::UnixListener'>UnixListener</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/tokio_uds/lib.rs.html#134-138' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class='method'><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, f: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/std/sys/imp/ext/io/trait.AsRawFd.html' title='std::sys::imp::ext::io::AsRawFd'>AsRawFd</a> for <a class='struct' href='../tokio_uds/struct.UnixListener.html' title='tokio_uds::UnixListener'>UnixListener</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/tokio_uds/lib.rs.html#140-144' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.as_raw_fd' class='method'><span id='as_raw_fd.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/std/sys/imp/ext/io/trait.AsRawFd.html#tymethod.as_raw_fd' class='fnname'>as_raw_fd</a>(&amp;self) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/std/sys/imp/ext/io/type.RawFd.html' title='std::sys::imp::ext::io::RawFd'>RawFd</a></code></span></h4>
+<div class='docblock'><p>Extracts the raw file descriptor. <a href="https://doc.rust-lang.org/nightly/std/sys/imp/ext/io/trait.AsRawFd.html#tymethod.as_raw_fd">Read more</a></p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "tokio_uds";
+    </script>
+    <script src="../jquery.js"></script>
+    <script src="../main.js"></script>
+    <script defer src="../search-index.js"></script>
+</body>
+</html>
