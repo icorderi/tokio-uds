@@ -14,5 +14,5 @@ Unix Domain sockets for Tokio
 mio = "0.6"
 mio-uds = "0.6.1"
 futures = "0.1"
-tokio-core = "0.1"
+tokio-core = { git = "https://github.com/tokio-rs/tokio-core"}
 log = "0.3"
